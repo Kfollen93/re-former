@@ -22,6 +22,9 @@
   <% end %> -->
 
 <%= form_for @user do |f| %>
+<% @user.errors.full_messages.each do |error| %>
+  <li><%= error %></li><br>
+  <% end %>
   Enter Username: <%= f.text_field :username, placeholder: "ExampleUser" %>
   Enter Password: <%= f.password_field :password, placeholder: "Password" %>
   Enter Email: <%= f.email_field :email, placeholder: "example@example.com" %>
